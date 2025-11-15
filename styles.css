@@ -36,7 +36,6 @@ svg {
   display: grid;
   font-size: 2rem;
   height: 10vh;
-  /* grid-template-rows: 3vh 1fr; */
 }
 .sidebar>:first-child>:first-child {
   display: grid;
@@ -67,11 +66,14 @@ header>:last-child {
 }
 
 .main-content {
+  --BORDER-RADIUS: calc(10px + 0.05vh);
+  --DARK-GRAY: rgb(120, 120, 120);
   grid-area: 2 / 2 / 3 / 3;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 3fr 1fr;
   background-color: var(--LIGHT-GRAY);
   padding: 2vh 1vw;
+  gap: 2vw;
 }
 
 .main-content>:first-child {
@@ -82,20 +84,78 @@ header>:last-child {
   font-weight: 500;
 }
 
-.main-content>:first-child> h2 + div{
+.projects> h2 + div{
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(2, 1fr);
   gap: 2vw;
 }
-.main-content>:first-child>h2 + div>div{
+.projects>h2 + div>div{
   background-color: white;
-  padding: 2vh 1vw;
-  border-radius: calc(10px + 0.05vh);
+  padding: 5vh 2vw;
+  border-radius: var(--BORDER-RADIUS);
   position: relative;
+  border-left: 0.5vw solid #F0B429;
+  font-size: 0.9em;
+  font-weight: 500;
 }
-.main-content>:first-child>h2 + div>div>:last-child{
+.projects>h2 + div>div>h4 {
+  margin-bottom: 0.5vh;
+}
+.projects>h2 + div>div>p{
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 5vh;
+  color: rgb(50, 50, 50);
+}
+.projects>h2 + div>div>:last-child{
   position: absolute;
   display: grid;
-  bottom: 2vh;
-  right: 1vw;
+  grid-auto-flow: column;
+  bottom: 5vh;
+  right: 2vw;
+  gap: 2vw;
 }
+
+.announcements>h2 + div{
+  background-color: white;
+  border-radius: var(--BORDER-RADIUS);
+  padding: 5vh 2vw;
+}
+.announcements>h2 + div>h5{
+  margin: 0;
+  font-size: 0.7em;
+  margin-bottom: 0.5vh;
+}
+.announcements>h2 + div>p{
+  font-size: 0.8rem;
+  color: var(--DARK-GRAY);
+}
+.announcements>h2 + div>hr{
+  margin: 3vh 0;
+}
+
+.trending>h2 + div>div{
+  background-color: white;
+  display: grid;
+  grid-auto-flow: column;
+  padding: 1vh 2vw;
+  /* gap: ; */
+}
+.trending>h2 + div>div>div{
+  background-color: black;
+  display: grid;
+  /* width: */
+}
+.trending>h2 + div>div>img{
+  aspect-ratio: 1/1;
+  /* background-color: inherit; */
+  width: 20%;
+}
+/* .main-content>:last-child>h2 + div>div{ */
+  /* background-color: black; */
+  /* display: grid; */
+  /* grid-auto-flow: column; */
+/* } */
+/* .main-content>:last-child>h2 + h5{ */
+  /* margin: 0; */
+/* } */
